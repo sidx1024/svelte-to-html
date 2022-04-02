@@ -14,8 +14,13 @@
     "type": "git",
     "url": "git+https://github.com/sidx1024/svelte-template-cli.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "sidx1024",
+  "keywords": [
+    "svelte",
+    "html",
+    "transform"
+  ],
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sidx1024/svelte-template-cli/issues"
   },
@@ -29,5 +34,8 @@
     "rollup-plugin-svelte": "7.1.0",
     "svelte": "3.46.5",
     "yargs": "17.4.0"
+  },
+  "directories": {
+    "test": "tests"
   }
 }
