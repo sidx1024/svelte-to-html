@@ -30,7 +30,7 @@ npx svelte-to-html input.svelte output.html props.json
 
 #### Input
 
-```sveltehtml
+```svelte
 <!-- template.svelte -->
 <script>
   const a = 5;
