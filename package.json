@@ -1,8 +1,9 @@
 {
   "name": "svelte-to-html",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "svelte-to-html is a command to quickly transform a Svelte file into static html.",
   "main": "index.js",
+  "bin": "./index.js",
   "scripts": {
     "test": "node tests/index.js"
   },
