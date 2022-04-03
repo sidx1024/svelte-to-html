@@ -16,7 +16,7 @@ async function compile(filepath, props) {
     plugins: [
       // @ts-ignore
       svelte({
-        compilerOptions: { generate: 'ssr', preserveComments: true, preserveWhitespace: true },
+        compilerOptions: { generate: 'ssr', preserveComments: true },
         onwarn: () => {},
       }),
       nodeResolve(),
