@@ -1,7 +1,10 @@
-const rollup = require('rollup');
-const svelte = require('rollup-plugin-svelte');
-const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const vm = require('vm');
+const rollup = require('rollup');
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
+const svelte = require('rollup-plugin-svelte');
+const sveltePreprocess = require('svelte-preprocess');
+// @ts-ignore
+const { svelteTrim } = require('svelte-trim');
 
 /**
  *
@@ -18,6 +21,13 @@ async function compile(filepath, props) {
       svelte({
         compilerOptions: { generate: 'ssr', preserveComments: true },
         onwarn: () => {},
+        preprocess: [
+          svelteTrim({
+            removalMethod: 'trim',
+            multiline: true,
+            inline: false,
+          }),
+        ],
       }),
       nodeResolve(),
     ],
