@@ -1,4 +1,5 @@
-{#each [1, 2, 3] as n}
-  {@const square = n * n}
-  <td>{square}</td>
-{/each}
+                <td>1</td>
+
+                <td>2</td>
+A: <a href='#'>Value 1</a>
+B: <a href='#'>Value 2</a>
