@@ -23,12 +23,7 @@ npx svelte-to-html <filepath> <output> <props>
 npx svelte-to-html filepath.svelte output.html '{"food":"Pizza"}'
 
 # Props as json file
-npx svelte-to-html filepath.svelte output.html props.json
-
-
-# Compiler API
-const { compile } = require('svelte-to-html/compiler');
-compile('filepath.svelte', { food: 'Pizza' }).then(html => console.log(html));  
+npx svelte-to-html filepath.svelte output.html props.json 
 ```
 
 ### Example
