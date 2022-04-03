@@ -12,9 +12,13 @@ const vm = require('vm');
 async function compile(filepath, props) {
   const bundle = await rollup.rollup({
     input: filepath,
+    external: ['svelte/internal'],
     plugins: [
       // @ts-ignore
-      svelte({ compilerOptions: { generate: 'ssr' } }),
+      svelte({
+        compilerOptions: { generate: 'ssr', preserveComments: true, preserveWhitespace: true },
+        onwarn: () => {},
+      }),
       nodeResolve(),
     ],
   });
@@ -24,7 +28,7 @@ async function compile(filepath, props) {
   const bindings = {};
   const slots = {};
 
-  return vm.runInNewContext(code, { module }).$$render(result, props, bindings, slots);
+  return vm.runInNewContext(code, { require, module }).$$render(result, props, bindings, slots);
 }
 
 module.exports = {
