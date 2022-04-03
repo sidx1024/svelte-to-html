@@ -13,7 +13,8 @@ let testsToRun = [];
 test('works with input, output and props', async () => {
   await clearTempDirectory();
   await exec('node src/index.js tests/t1.svelte tests/tmp/t1.html \'{"name": "Testing"}\'');
-  const expected = `<p>Testing</p><ul><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ul>`;
+  const expected = `<p>Testing</p>
+<ul><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ul>`;
   const actual = fs.readFileSync('./tests/tmp/t1.html', { encoding: 'utf-8' });
   assert.equal(actual, expected);
 });
@@ -21,7 +22,8 @@ test('works with input, output and props', async () => {
 test('works with input, output and props json file', async () => {
   await clearTempDirectory();
   await exec('node src/index.js tests/t1.svelte tests/tmp/t2.html tests/t2.json');
-  const expected = `<p>Testing 2</p><ul><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ul>`;
+  const expected = `<p>Testing 2</p>
+<ul><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ul>`;
   const actual = fs.readFileSync('./tests/tmp/t2.html', { encoding: 'utf-8' });
   assert.equal(actual, expected);
 });
@@ -29,14 +31,25 @@ test('works with input, output and props json file', async () => {
 test('works with input, output and external import', async () => {
   await clearTempDirectory();
   await exec('node src/index.js tests/t3.svelte tests/tmp/t3.html');
-  const expected = `<!-- comment --><p>External</p>`;
+  const expected = `<!-- comment -->
+<p>External</p>`;
   const actual = fs.readFileSync('./tests/tmp/t3.html', { encoding: 'utf-8' });
   assert.equal(actual, expected);
 });
 
 test('works with api usage', async () => {
   const actual = await compile('tests/t1.svelte', { name: 'Testing 4' });
-  const expected = `<p>Testing 4</p><ul><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ul>`;
+  const expected = `<p>Testing 4</p>
+<ul><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ul>`;
+  assert.equal(actual, expected);
+});
+
+test('works with whitespace fixes', async () => {
+  const actual = await compile('tests/trim.svelte', { name: 'Testing 4' });
+  const expected = `<td>1</td>
+<td>2</td>
+A: <a href="#">Value 1</a>
+B: <a href="#">Value 2</a>`
   assert.equal(actual, expected);
 });
 

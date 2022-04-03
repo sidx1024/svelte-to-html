@@ -32,6 +32,8 @@ async function compile(filepath, props) {
   const html = vm.runInNewContext(code, { require, module }).$$render(result, props, bindings, slots);
   const minifiedHTML = minify(html, {
     collapseWhitespace: true,
+    conservativeCollapse: true,
+    preserveLineBreaks: true,
   });
 
   return minifiedHTML;
