@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "es2017",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "types",
+    "moduleResolution": "Node",
+    "skipLibCheck": true,
+    "strict": true,
+    "checkJs": true
+  },
+  "include": ["src", "tests"],
+}

@@ -17,13 +17,18 @@
 ## Usage
 
 ```sh
-npx svelte-to-html <input> <output> <props>
+npx svelte-to-html <filepath> <output> <props>
 
 # Props as json string
-npx svelte-to-html input.svelte output.html '{"food":"Pizza"}'
+npx svelte-to-html filepath.svelte output.html '{"food":"Pizza"}'
 
 # Props as json file
-npx svelte-to-html input.svelte output.html props.json
+npx svelte-to-html filepath.svelte output.html props.json
+
+
+# Compiler API
+const { compile } = require('svelte-to-html/compiler');
+compile('filepath.svelte', { food: 'Pizza' }).then(html => console.log(html));  
 ```
 
 ### Example
@@ -56,7 +61,7 @@ npx svelte-to-html input.svelte output.html props.json
 
 ```sh
 npx svelte-to-html template.svelte template.html '{"numbers": [2, 5, 7]}'
-###                <input>          <output>     <props>
+###                <filepath>          <output>     <props>
 ```
 
 #### Output:
