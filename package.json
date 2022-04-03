@@ -1,6 +1,6 @@
 {
   "name": "svelte-to-html",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "svelte-to-html is a command to quickly transform a Svelte file into static html.",
   "main": "src/index.js",
   "bin": "./src/index.js",
@@ -39,6 +39,8 @@
     "rollup": "2.70.1",
     "rollup-plugin-svelte": "7.1.0",
     "svelte": "3.46.5",
+    "svelte-preprocess": "^4.10.4",
+    "svelte-trim": "^0.1.0",
     "yargs": "17.4.0"
   },
   "directories": {
