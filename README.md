@@ -14,7 +14,7 @@
 - For scenarios where you'd want to generate a static HTML file but with if/else conditionals or for loops. [Svelte's templating features and syntax](https://svelte.dev/docs#template-syntax-if) come to rescue.
 - Ideal for creating templates for GitHub comments which can be used in GitHub Actions.
 
-## Usage
+## Usage (CLI)
 
 ```sh
 npx svelte-to-html <filepath> <output> <props>
@@ -24,8 +24,10 @@ npx svelte-to-html filepath.svelte output.html '{"food":"Pizza"}'
 
 # Props as json file
 npx svelte-to-html filepath.svelte output.html props.json
+```
 
-# Compiler API
+## Usage (Compiler API)
+```js
 const { compile } = require('svelte-to-html');
 compile('filepath.svelte', { food: 'Pizza' }).then(html => console.log(html));
 ```
