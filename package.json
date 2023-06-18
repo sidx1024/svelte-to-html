@@ -40,7 +40,7 @@
     "html-minifier": "^4.0.0",
     "rollup": "2.70.1",
     "rollup-plugin-svelte": "7.1.0",
-    "svelte": "3.46.5",
+    "svelte": "3.59.1",
     "yargs": "17.4.0"
   },
   "directories": {
