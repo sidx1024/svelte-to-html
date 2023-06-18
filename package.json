@@ -1,6 +1,6 @@
 {
   "name": "svelte-to-html",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "svelte-to-html is a command to quickly transform a Svelte file into static html.",
   "main": "src/index.js",
   "bin": "./src/index.js",
@@ -16,7 +16,7 @@
   "types": "types/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sidx1024/svelte-template-cli.git"
+    "url": "git+https://github.com/sidx1024/svelte-to-html.git"
   },
   "author": "sidx1024",
   "keywords": [
@@ -26,9 +26,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sidx1024/svelte-template-cli/issues"
+    "url": "https://github.com/sidx1024/svelte-to-html/issues"
   },
-  "homepage": "https://github.com/sidx1024/svelte-template-cli#readme",
+  "homepage": "https://github.com/sidx1024/svelte-to-html#readme",
   "devDependencies": {
     "@types/html-minifier": "^4.0.2",
     "@types/yargs": "^17.0.10",
@@ -40,7 +40,7 @@
     "html-minifier": "^4.0.0",
     "rollup": "2.70.1",
     "rollup-plugin-svelte": "7.1.0",
-    "svelte": "3.46.5",
+    "svelte": "3.59.1",
     "yargs": "17.4.0"
   },
   "directories": {
